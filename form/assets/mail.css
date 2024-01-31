@@ -1,0 +1,177 @@
+/*== Common ==*/
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #CCFF99;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: left;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", sans-serif;
+}
+.sp {
+  display: none;
+}
+#formWrap {
+  width: 80%;
+  max-width: 1300px;
+  padding: 100px 50px;
+  margin: 30px auto 0;
+  background-color: #fff;
+}
+.confirm-title {
+  font-size: 32px;
+  text-align: center;
+  padding-bottom: 80px;
+}
+.confirm-text {
+  text-align: center;
+  padding-bottom: 50px;
+  font-size: 14px;
+}
+.contract {
+  border: 1px solid #ccc;
+  padding: 20px 20px 20px 50px;
+  margin: 50px 0;
+}
+.contract h4 {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  margin: 30px 0 20px;
+  font-size: 16px;
+}
+.contract-inner {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.contract ol li {
+  padding: 3px 0;
+}
+.contract p {
+  text-align: center;
+  padding: 40px 0 30px;
+}
+.confirm-btn {
+  text-align: center;
+}
+/*== Form ==*/
+.form-table {
+  width: 100%;
+  margin: 0 auto 20px;
+  border-collapse: collapse;
+}
+.form-table2 {
+  width: 100%;
+  margin: 0 auto 20px;
+  border-collapse: collapse;
+}
+.form-table input {
+  vertical-align: baseline;
+  font-size: 14px;
+}
+.form-table tr {
+  font-size: 0;
+}
+.form-table th {
+  width: 35%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #efefef;
+  text-align-last: left;
+  vertical-align: top;
+}
+.form-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 14px;
+}
+.address-space {
+  font-size: 14px;
+  padding: 10px 0;
+}
+.check_lb {
+  display: block;
+  cursor: pointer;
+  margin: 20px 0 10px;
+}
+.otherTextBox {
+  margin-left: 25px;
+}
+/*== Form>お申込情報 ==*/
+.form-lead {
+  padding: 20px 0 30px;
+  line-height: 1.4;
+}
+.store-title {
+  border: solid 1px #ccc;
+  padding: 10px;
+}
+.planbtn {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px 0 5px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.plankome {
+  padding-left: 15px;
+}
+.meo-space {
+  font-size: 1.4rem;
+  padding: 5px 0 0;
+}
+/*== Form>約款、確認、免責事項 ==*/
+.checkbox label input {
+  float: left;
+}
+.checkbox-area {
+  float: left;
+  padding-left: 2px;
+  width: calc(100% - 24px);
+}
+.checkbox label:after {
+  content: "";
+  clear: both;
+}
+table.form-table2 td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1.4rem;
+}
+.submitreset {
+  text-align: center;
+}
+input[type="submit"], input[type="reset"], input[type="button"] {
+  margin: 30px 10px;
+  width: 100px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.checkbox input {
+  cursor: pointer;
+}
+footer {
+  padding: 30px;
+}
+
+@media (max-width: 900px) {
+
+  tr {
+    display: table-row;
+  }
+  .form-table th {
+    margin-top: 0px;
+    border-bottom: 0;
+    width: auto;
+    display: block;
+  }
+  .form-table td {
+    padding: 18px 13px;
+    width: auto;
+    display: block;
+  }
+}
