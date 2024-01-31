@@ -238,9 +238,241 @@
             <td><input class="meo-input" type="text" id="keyword1" name="店舗1MEO対策ワード">
               <p class="meo-space">例：①天神／⻭医者／おすすめ　②福岡／焼⾁</p></td>
           </tr>
+          
         </tbody>
       </table>
-    
+      <p id="btn-txt2" class="btn2">▼ 2店舗目追加</p>
+      <div class="hid-contents2">
+        <h3 class="store-title">お申込店舗②</h3>
+        <table class="form-table">
+          <tbody><tr>
+            <th><label for="store2">店舗屋号<span class="kome">*</span></label></th>
+            <td><input type="text" id="store2" name="店舗2屋号" size="30"></td>
+          </tr>
+          <tr>
+            <th><label for="storeaddress2">店舗所在地<span class="kome">*</span></label></th>
+            <td id="storeaddress2"><p>■郵便番号</p>
+              <input type="text" id="store2postalcode" name="店舗2所在地（郵便番号）" size="10" maxlength="8" onkeyup="AjaxZip3.zip2addr(this,'','店舗2所在地（住所、建物・号室）','店舗2所在地（住所、建物・号室）');" placeholder="000-0000">
+              <p class="address-space">※半角数字にてご記入ください。郵便番号で住所⾃動表⽰</p>
+              <p>■住所、建物・号室</p>
+              <input type="text" id="store2address" name="店舗2所在地（住所、建物・号室）" size="60"></td>
+          </tr>
+          <tr>
+            <th><label for="store2tel">店舗電話番号<span class="kome">*</span></label></th>
+            <td><input type="tel" id="store2tel" name="店舗2電話番号" size="20"></td>
+          </tr>
+          <tr>
+            <th><label for="store2charge">店舗ご担当者<span class="kome">*</span></label></th>
+            <td><input type="text" id="store2charge" name="店舗2ご担当者" size="20"></td>
+          </tr>
+           <tr>
+          <th>お申込プラン<span class="kome">*</span></th>
+          <td>
+            <label class="check_lb">
+              <input type="radio" name="店舗2お申込プラン" value="月額20,000円">
+               <span style="padding-bottom: 10px; display: inline-block;">月額20,000円（税別）</span><br>
+              <span class="planbtn">ページ基礎制作</span><span class="planbtn">ページ更新</span><span class="planbtn">最新情報更新（週1回）</span><br>
+              <span class="plankome">※最短契約期間：12ヶ月　契約更新：12ヶ月毎</span>
+            </label>
+                      <label class="check_lb">
+              <input type="radio" name="店舗2お申込プラン" value="月額35,000円">
+               <span style="padding-bottom: 10px; display: inline-block;">月額35,000円（税別）</span><br>
+              <span class="planbtn">ページ基礎制作</span><span class="planbtn">ページ更新</span><span class="planbtn">最新情報更新（週2回）</span><br>
+                        <span class="planbtn">MEO対策</span><span class="planbtn">分析チェックツール</span><br>
+              <span class="plankome">※最短契約期間：12ヶ月　契約更新：12ヶ月毎</span>
+            </label>
+              <label class="check_lb">
+              <input type="radio" name="店舗2お申込プラン" value="その他">
+              その他 </label>
+            <input class="othertextbox" style="margin-bottom: 10px;" type="text" name="店舗2その他お申込プラン" value="">
+        </td>
+        </tr>
+          <tr>
+            <th>サービス利用開始希望時期<span class="kome">*</span></th>
+            <td><input class="cursor" type="date" name="店舗2サービス利用開始希望時期"></td>
+          </tr>
+                 <tr>
+          <th><label for="keyword1">申込店舗MEO対策ワード<br>
+              (最大６パターン)</label></th>
+          <td><input class="meo-input" type="text" id="keyword2" name="店舗2MEO対策ワード">
+            <p class="meo-space">例：①天神／⻭医者／おすすめ　②福岡／焼⾁</p></td>
+        </tr>
+        </tbody></table>
+      </div>
+        </div>
+        <p id="btn-txt3" class="btn3">▼ 3店舗目追加</p>
+        <div class="hid-contents3">
+          <h3 class="store-title">お申込店舗③</h3>
+          <table class="form-table">
+            <tbody><tr>
+              <th><label for="store3">店舗屋号<span class="kome">*</span></label></th>
+              <td><input type="text" id="store3" name="店舗3屋号" size="30"></td>
+            </tr>
+            <tr>
+              <th><label for="storeaddress3">店舗所在地<span class="kome">*</span></label></th>
+              <td id="storeaddress3"><p>■郵便番号</p>
+                <input type="text" id="store3postalcode" name="店舗3所在地（郵便番号）" size="10" maxlength="8" onkeyup="AjaxZip3.zip2addr(this,'','店舗3所在地（住所、建物・号室）','店舗3所在地（住所、建物・号室）');" placeholder="000-0000">
+                <p class="address-space">※半角数字にてご記入ください。郵便番号で住所⾃動表⽰</p>
+                <p>■住所、建物・号室</p>
+                <input type="text" id="store3address" name="店舗3所在地（住所、建物・号室）" size="60"></td>
+            </tr>
+            <tr>
+              <th><label for="store3tel">店舗電話番号<span class="kome">*</span></label></th>
+              <td><input type="tel" id="store3tel" name="店舗3電話番号" size="20"></td>
+            </tr>
+            <tr>
+              <th><label for="store3charge">店舗ご担当者<span class="kome">*</span></label></th>
+              <td><input type="text" id="store3charge" name="店舗3ご担当者" size="20"></td>
+            </tr>
+          <tr>
+            <th>お申込プラン<span class="kome">*</span></th>
+            <td>
+              <label class="check_lb">
+                <input type="radio" name="店舗3お申込プラン" value="月額20,000円">
+                 <span style="padding-bottom: 10px; display: inline-block;">月額20,000円（税別）</span><br>
+                <span class="planbtn">ページ基礎制作</span><span class="planbtn">ページ更新</span><span class="planbtn">最新情報更新（週1回）</span><br>
+                <span class="plankome">※最短契約期間：12ヶ月　契約更新：12ヶ月毎</span>
+              </label>
+                        <label class="check_lb">
+                <input type="radio" name="店舗3お申込プラン" value="月額35,000円">
+                 <span style="padding-bottom: 10px; display: inline-block;">月額35,000円（税別）</span><br>
+                <span class="planbtn">ページ基礎制作</span><span class="planbtn">ページ更新</span><span class="planbtn">最新情報更新（週2回）</span><br>
+                          <span class="planbtn">MEO対策</span><span class="planbtn">分析チェックツール</span><br>
+                <span class="plankome">※最短契約期間：12ヶ月　契約更新：12ヶ月毎</span>
+              </label>
+                <label class="check_lb">
+                <input type="radio" name="店舗3お申込プラン" value="その他">
+                その他 </label>
+              <input class="othertextbox" style="margin-bottom: 10px;" type="text" name="店舗3その他お申込プラン" value="">
+          </td>
+          </tr>
+            <tr>
+              <th>サービス利用開始希望時期<span class="kome">*</span></th>
+              <td><input class="cursor" type="date" name="店舗3サービス利用開始希望時期"></td>
+            </tr>
+                   <tr>
+            <th><label for="keyword1">申込店舗MEO対策ワード<br>
+                (最大６パターン)</label></th>
+            <td><input class="meo-input" type="text" id="keyword3" name="店舗3MEO対策ワード">
+              <p class="meo-space">例：①天神／⻭医者／おすすめ　②福岡／焼⾁</p></td>
+          </tr>
+          </tbody></table>
+        </div>
+        <p id="btn-txt4" class="btn4">▼ 4店舗目追加</p>
+        <div class="hid-contents4">
+          <h3 class="store-title">お申込店舗④</h3>
+          <table class="form-table">
+            <tbody><tr>
+              <th><label for="store4">店舗屋号<span class="kome">*</span></label></th>
+              <td><input type="text" id="store4" name="店舗4屋号" size="30"></td>
+            </tr>
+            <tr>
+              <th><label for="storeaddress4">店舗所在地<span class="kome">*</span></label></th>
+              <td id="storeaddress4"><p>■郵便番号</p>
+                <input type="text" id="store4postalcode" name="店舗4所在地（郵便番号）" size="10" maxlength="8" onkeyup="AjaxZip3.zip2addr(this,'','店舗4所在地（住所、建物・号室）','店舗4所在地（住所、建物・号室）');" placeholder="000-0000">
+                <p class="address-space">※半角数字にてご記入ください。郵便番号で住所⾃動表⽰</p>
+                <p>■住所、建物・号室</p>
+                <input type="text" id="store4address" name="店舗4所在地（住所、建物・号室）" size="60"></td>
+            </tr>
+            <tr>
+              <th><label for="store4tel">店舗電話番号<span class="kome">*</span></label></th>
+              <td><input type="tel" id="store4tel" name="店舗4電話番号" size="20"></td>
+            </tr>
+            <tr>
+              <th><label for="store4charge">店舗ご担当者<span class="kome">*</span></label></th>
+              <td><input type="text" id="store4charge" name="店舗4ご担当者" size="20"></td>
+            </tr>
+          <tr>
+            <th>お申込プラン<span class="kome">*</span></th>
+            <td>
+              <label class="check_lb">
+                <input type="radio" name="店舗4お申込プラン" value="月額20,000円">
+                 <span style="padding-bottom: 10px; display: inline-block;">月額20,000円（税別）</span><br>
+                <span class="planbtn">ページ基礎制作</span><span class="planbtn">ページ更新</span><span class="planbtn">最新情報更新（週1回）</span><br>
+                <span class="plankome">※最短契約期間：12ヶ月　契約更新：12ヶ月毎</span>
+              </label>
+                        <label class="check_lb">
+                <input type="radio" name="店舗4お申込プラン" value="月額35,000円">
+                 <span style="padding-bottom: 10px; display: inline-block;">月額35,000円（税別）</span><br>
+                <span class="planbtn">ページ基礎制作</span><span class="planbtn">ページ更新</span><span class="planbtn">最新情報更新（週2回）</span><br>
+                          <span class="planbtn">MEO対策</span><span class="planbtn">分析チェックツール</span><br>
+                <span class="plankome">※最短契約期間：12ヶ月　契約更新：12ヶ月毎</span>
+              </label>
+                <label class="check_lb">
+                <input type="radio" name="店舗4お申込プラン" value="その他">
+                その他 </label>
+              <input class="othertextbox" style="margin-bottom: 10px;" type="text" name="店舗4その他お申込プラン" value="">
+          </td>
+          </tr>
+            <tr>
+              <th>サービス利用開始希望時期<span class="kome">*</span></th>
+              <td><input class="cursor" type="date" name="店舗4サービス利用開始希望時期"></td>
+            </tr>
+                   <tr>
+            <th><label for="keyword1">申込店舗MEO対策ワード<br>
+                (最大６パターン)</label></th>
+            <td><input class="meo-input" type="text" id="keyword4" name="店舗4MEO対策ワード">
+              <p class="meo-space">例：①天神／⻭医者／おすすめ　②福岡／焼⾁</p></td>
+          </tr>
+          </tbody></table>
+        </div>
+        <p id="btn-txt5" class="btn5">▼ 5店舗目追加</p>
+        <div class="hid-contents5">
+          <h3 class="store-title">お申込店舗⑤</h3>
+          <table class="form-table">
+            <tbody><tr>
+              <th><label for="store5">店舗屋号<span class="kome">*</span></label></th>
+              <td><input type="text" id="store5" name="店舗5屋号" size="30"></td>
+            </tr>
+            <tr>
+              <th><label for="storeaddress5">店舗所在地<span class="kome">*</span></label></th>
+              <td id="storeaddress5"><p>■郵便番号</p>
+                <input type="text" id="store5postalcode" name="店舗5所在地（郵便番号）" size="10" maxlength="8" onkeyup="AjaxZip3.zip2addr(this,'','店舗5所在地（住所、建物・号室）','店舗5所在地（住所、建物・号室）');" placeholder="000-0000">
+                <p class="address-space">※半角数字にてご記入ください。郵便番号で住所⾃動表⽰</p>
+                <p>■住所、建物・号室</p>
+                <input type="text" id="store5address" name="店舗5所在地（住所、建物・号室）" size="60"></td>
+            </tr>
+            <tr>
+              <th><label for="store5tel">店舗電話番号<span class="kome">*</span></label></th>
+              <td><input type="tel" id="store5tel" name="店舗5電話番号" size="20"></td>
+            </tr>
+            <tr>
+              <th><label for="store5charge">店舗ご担当者<span class="kome">*</span></label></th>
+              <td><input type="text" id="store5charge" name="店舗5ご担当者" size="20"></td>
+            </tr>
+          <tr>
+            <th>お申込プラン<span class="kome">*</span></th>
+            <td>
+              <label class="check_lb">
+                <input type="radio" name="店舗5お申込プラン" value="月額20,000円">
+                 <span style="padding-bottom: 10px; display: inline-block;">月額20,000円（税別）</span><br>
+                <span class="planbtn">ページ基礎制作</span><span class="planbtn">ページ更新</span><span class="planbtn">最新情報更新（週1回）</span><br>
+                <span class="plankome">※最短契約期間：12ヶ月　契約更新：12ヶ月毎</span>
+              </label>
+                        <label class="check_lb">
+                <input type="radio" name="店舗5お申込プラン" value="月額35,000円">
+                 <span style="padding-bottom: 10px; display: inline-block;">月額35,000円（税別）</span><br>
+                <span class="planbtn">ページ基礎制作</span><span class="planbtn">ページ更新</span><span class="planbtn">最新情報更新（週2回）</span><br>
+                          <span class="planbtn">MEO対策</span><span class="planbtn">分析チェックツール</span><br>
+                <span class="plankome">※最短契約期間：12ヶ月　契約更新：12ヶ月毎</span>
+              </label>
+                <label class="check_lb">
+                <input type="radio" name="店舗5お申込プラン" value="その他">
+                その他 </label>
+              <input class="othertextbox" style="margin-bottom: 10px;" type="text" name="店舗5その他お申込プラン" value="">
+          </td>
+          </tr>
+            <tr>
+              <th>サービス利用開始希望時期<span class="kome">*</span></th>
+              <td><input class="cursor" type="date" name="店舗5サービス利用開始希望時期"></td>
+            </tr>
+             <tr>
+            <th><label for="keyword1">申込店舗MEO対策ワード<br>
+                (最大６パターン)</label></th>
+            <td><input class="meo-input" type="text" id="keyword5" name="店舗5MEO対策ワード">
+              <p class="meo-space">例：①天神／⻭医者／おすすめ　②福岡／焼⾁</p></td>
+          </tr>
+          </tbody></table>
         </div>
       <div class="checkbox">
         <div class="form-title">

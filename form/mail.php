@@ -12,75 +12,108 @@
 <body class="body">
 <?php
 // フォームが送信されたかどうかを確認
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $to = 'reonon4627@gmail.com'; // 送信先メールアドレス
+    $subject = 'Googleビジネスプロフィール 代行サービス 申し込みフォーム'; // メールの件名
+    
+    // メール本文の作成
+    $message = "以下の内容でGoogleビジネスプロフィール代行サービスの申し込みがありました。\n\n";
+    $message .= "\nメールアドレス: " . htmlspecialchars($_POST['メールアドレス']) . "\n";
+    $message .= "ご紹介者名: " . htmlspecialchars($_POST['ご紹介者名']) . "\n";
+    $message .= "申込会社名又は屋号: " . htmlspecialchars($_POST['申込会社名又は屋号']) . "\n";
+    $message .= "会社所在地（郵便番号）: " . htmlspecialchars($_POST['会社所在地（郵便番号）']) . "\n";
+    $message .= "会社所在地（住所、建物・号室）: " . htmlspecialchars($_POST['会社所在地（住所、建物・号室）']) . "\n";
+    $message .= "会社電話番号: " . htmlspecialchars($_POST['会社電話番号']) . "\n";
+    $message .= "役職肩書: " . htmlspecialchars($_POST['役職肩書']) . "\n";
+    $message .= "代表者氏名: " . htmlspecialchars($_POST['代表者氏名']) . "\n";
+    $message .= "請求書等送付先メールアドレス: " . htmlspecialchars($_POST['請求書等送付先メールアドレス']) . "\n";
+    $message .= "お支払い方法: " . htmlspecialchars($_POST['お支払い方法']) . "\n";
+    $message .= "その他お支払い方法: " . htmlspecialchars($_POST['その他お支払い方法']) . "\n";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+    // 店舗1
+    $message .= "\n\n=== 店舗1情報 ===\n";
+    $message .= "店舗1屋号: " . htmlspecialchars($_POST['店舗1屋号']) . "\n";
+    $message .= "店舗1所在地（郵便番号）: " . htmlspecialchars($_POST['店舗1所在地（郵便番号）']) . "\n";
+    $message .= "店舗1所在地（住所、建物・号室）: " . htmlspecialchars($_POST['店舗1所在地（住所、建物・号室）']) . "\n";
+    $message .= "店舗1電話番号: " . htmlspecialchars($_POST['店舗1電話番号']) . "\n";
+    $message .= "店舗1ご担当者: " . htmlspecialchars($_POST['店舗1ご担当者']) . "\n";
+    $message .= "店舗1お申込プラン: " . htmlspecialchars($_POST['店舗1お申込プラン']) . "\n";
+    $message .= "店舗1その他お申込プラン: " . htmlspecialchars($_POST['店舗1その他お申込プラン']) . "\n";
+    $message .= "店舗1サービス利用開始希望時期: " . htmlspecialchars($_POST['店舗1サービス利用開始希望時期']) . "\n";
+    $message .= "店舗1MEO対策ワード: " . htmlspecialchars($_POST['店舗1MEO対策ワード']) . "\n";
 
-  $to = 'reonon4627@gmail.com'; // 送信先メールアドレス
-  $subject = 'Googleビジネスプロフィール 代行サービス 申し込みフォーム'; // メールの件名
+
+    if (!empty($_POST['店舗2屋号']) || !empty($_POST['店舗2所在地（郵便番号）']) || !empty($_POST['店舗2所在地（住所、建物・号室）']) || !empty($_POST['店舗2電話番号']) || !empty($_POST['店舗2ご担当者']) || !empty($_POST['店舗2お申込プラン']) || !empty($_POST['店舗2その他お申込プラン']) || !empty($_POST['店舗2サービス利用開始希望時期']) || !empty($_POST['店舗2MEO対策ワード'])) {
+      $message .= "\n\n=== 店舗2情報 ===\n";
+      $message .= "店舗2屋号: " . htmlspecialchars($_POST['店舗2屋号']) . "\n";
+      $message .= "店舗2所在地（郵便番号）: " . htmlspecialchars($_POST['店舗2所在地（郵便番号）']) . "\n";
+      $message .= "店舗2所在地（住所、建物・号室）: " . htmlspecialchars($_POST['店舗2所在地（住所、建物・号室）']) . "\n";
+      $message .= "店舗2電話番号: " . htmlspecialchars($_POST['店舗2電話番号']) . "\n";
+      $message .= "店舗2ご担当者: " . htmlspecialchars($_POST['店舗2ご担当者']) . "\n";
+      $message .= "店舗2お申込プラン: " . htmlspecialchars($_POST['店舗2お申込プラン']) . "\n";
+      $message .= "店舗2その他お申込プラン: " . htmlspecialchars($_POST['店舗2その他お申込プラン']) . "\n";
+      $message .= "店舗2サービス利用開始希望時期: " . htmlspecialchars($_POST['店舗2サービス利用開始希望時期']) . "\n";
+      $message .= "店舗2MEO対策ワード: " . htmlspecialchars($_POST['店舗2MEO対策ワード']) . "\n";
+  }
   
- 
-   // メール本文の作成
-   $message = "以下の内容でGoogleビジネスプロフィール代行サービスの申し込みがありました。\n\n";
-
-      $message .= "\nメールアドレス: $email\n";
-$message .= "ご紹介者名: $referrer\n";
-$message .= "申込会社名又は屋号: $companyName\n";
-$message .= "会社所在地（郵便番号）: $companyZip\n";
-$message .= "会社所在地（住所、建物・号室）: $companyAddress\n";
-$message .= "会社電話番号: $companyPhone\n";
-$message .= "役職肩書: $position\n";
-$message .= "代表者氏名: $representativeName\n";
-$message .= "請求書等送付先メールアドレス: $billingEmail\n";
-$message .= "お支払い方法: $paymentMethod\n";
-$message .= "その他お支払い方法: $otherPaymentMethod\n";
-$message .= "店舗1屋号: $store1Name\n";
-$message .= "店舗1所在地（郵便番号）: $store1Zip\n";
-$message .= "店舗1所在地（住所、建物・号室）: $store1Address\n";
-$message .= "店舗1電話番号: $store1Phone\n";
-$message .= "店舗1ご担当者: $store1Contact\n";
-$message .= "店舗1お申込プラン: $store1Plan\n";
-$message .= "店舗1その他お申込プラン: $store1OtherPlan\n";
-$message .= "店舗1サービス利用開始希望時期: $store1StartDate\n";
-$message .= "店舗1MEO対策ワード: $store1MEO\n";
-echo htmlspecialchars($_POST['メールアドレス']);
-
-
-$email = isset($_POST['メールアドレス']) ? $_POST['メールアドレス'] : '';
-$referrer = isset($_POST['ご紹介者名']) ? $_POST['ご紹介者名'] : '';
-$companyName = isset($_POST['申込会社名又は屋号']) ? $_POST['申込会社名又は屋号'] : '';
-// 他のフォームフィールドも同様に取得
-
-// 各変数がデータを持っているか確認
-if (empty($email) || empty($referrer) || empty($companyName)) {
-    echo '必要なデータが不足しています。';
-    exit();
+// 店舗3
+if (!empty($_POST['店舗3屋号']) || !empty($_POST['店舗3所在地（郵便番号）']) || !empty($_POST['店舗3所在地（住所、建物・号室）']) || !empty($_POST['店舗3電話番号']) || !empty($_POST['店舗3ご担当者']) || !empty($_POST['店舗3お申込プラン']) || !empty($_POST['店舗3その他お申込プラン']) || !empty($_POST['店舗3サービス利用開始希望時期']) || !empty($_POST['店舗3MEO対策ワード'])) {
+  $message .= "\n\n=== 店舗3情報 ===\n";
+  $message .= "店舗3屋号: " . htmlspecialchars($_POST['店舗3屋号']) . "\n";
+  $message .= "店舗3所在地（郵便番号）: " . htmlspecialchars($_POST['店舗3所在地（郵便番号）']) . "\n";
+  $message .= "店舗3所在地（住所、建物・号室）: " . htmlspecialchars($_POST['店舗3所在地（住所、建物・号室）']) . "\n";
+  $message .= "店舗3電話番号: " . htmlspecialchars($_POST['店舗3電話番号']) . "\n";
+  $message .= "店舗3ご担当者: " . htmlspecialchars($_POST['店舗3ご担当者']) . "\n";
+  $message .= "店舗3お申込プラン: " . htmlspecialchars($_POST['店舗3お申込プラン']) . "\n";
+  $message .= "店舗3その他お申込プラン: " . htmlspecialchars($_POST['店舗3その他お申込プラン']) . "\n";
+  $message .= "店舗3サービス利用開始希望時期: " . htmlspecialchars($_POST['店舗3サービス利用開始希望時期']) . "\n";
+  $message .= "店舗3MEO対策ワード: " . htmlspecialchars($_POST['店舗3MEO対策ワード']) . "\n";
 }
-      
-      $mailSent = mail($to, $subject, $message,$_POST);
 
-      foreach ($_POST as $key => $value) {
-        // 'submit' フィールドと 'mail_set' フィールドはスキップ
-        if ($key != 'mail_set') {
-        // キー内のアンダースコアをスペースに置換して可読性向上
-        $key = str_replace('_', ' ', $key);
-        $message .= "$key: $value\n";
-    }
-    }
+// 店舗4
+if (!empty($_POST['店舗4屋号']) || !empty($_POST['店舗4所在地（郵便番号）']) || !empty($_POST['店舗4所在地（住所、建物・号室）']) || !empty($_POST['店舗4電話番号']) || !empty($_POST['店舗4ご担当者']) || !empty($_POST['店舗4お申込プラン']) || !empty($_POST['店舗4その他お申込プラン']) || !empty($_POST['店舗4サービス利用開始希望時期']) || !empty($_POST['店舗4MEO対策ワード'])) {
+  $message .= "\n\n=== 店舗4情報 ===\n";
+  $message .= "店舗4屋号: " . htmlspecialchars($_POST['店舗4屋号']) . "\n";
+  $message .= "店舗4所在地（郵便番号）: " . htmlspecialchars($_POST['店舗4所在地（郵便番号）']) . "\n";
+  $message .= "店舗4所在地（住所、建物・号室）: " . htmlspecialchars($_POST['店舗4所在地（住所、建物・号室）']) . "\n";
+  $message .= "店舗4電話番号: " . htmlspecialchars($_POST['店舗4電話番号']) . "\n";
+  $message .= "店舗4ご担当者: " . htmlspecialchars($_POST['店舗4ご担当者']) . "\n";
+  $message .= "店舗4お申込プラン: " . htmlspecialchars($_POST['店舗4お申込プラン']) . "\n";
+  $message .= "店舗4その他お申込プラン: " . htmlspecialchars($_POST['店舗4その他お申込プラン']) . "\n";
+  $message .= "店舗4サービス利用開始希望時期: " . htmlspecialchars($_POST['店舗4サービス利用開始希望時期']) . "\n";
+  $message .= "店舗4MEO対策ワード: " . htmlspecialchars($_POST['店舗4MEO対策ワード']) . "\n";
+}
 
-      if ($mailSent) {
+// 店舗5
+if (!empty($_POST['店舗5屋号']) || !empty($_POST['店舗5所在地（郵便番号）']) || !empty($_POST['店舗5所在地（住所、建物・号室）']) || !empty($_POST['店舗5電話番号']) || !empty($_POST['店舗5ご担当者']) || !empty($_POST['店舗5お申込プラン']) || !empty($_POST['店舗5その他お申込プラン']) || !empty($_POST['店舗5サービス利用開始希望時期']) || !empty($_POST['店舗5MEO対策ワード'])) {
+  $message .= "\n\n=== 店舗5情報 ===\n";
+  $message .= "店舗5屋号: " . htmlspecialchars($_POST['店舗5屋号']) . "\n";
+  $message .= "店舗5所在地（郵便番号）: " . htmlspecialchars($_POST['店舗5所在地（郵便番号）']) . "\n";
+  $message .= "店舗5所在地（住所、建物・号室）: " . htmlspecialchars($_POST['店舗5所在地（住所、建物・号室）']) . "\n";
+  $message .= "店舗5電話番号: " . htmlspecialchars($_POST['店舗5電話番号']) . "\n";
+  $message .= "店舗5ご担当者: " . htmlspecialchars($_POST['店舗5ご担当者']) . "\n";
+  $message .= "店舗5お申込プラン: " . htmlspecialchars($_POST['店舗5お申込プラン']) . "\n";
+  $message .= "店舗5その他お申込プラン: " . htmlspecialchars($_POST['店舗5その他お申込プラン']) . "\n";
+  $message .= "店舗5サービス利用開始希望時期: " . htmlspecialchars($_POST['店舗5サービス利用開始希望時期']) . "\n";
+  $message .= "店舗5MEO対策ワード: " . htmlspecialchars($_POST['店舗5MEO対策ワード']) . "\n";
+}
+
+  
+
+    // メールの送信
+    $mailSent = mail($to, $subject, $message);
+
+    // 送信結果の確認
+    if ($mailSent) {
         header('Location: thank_you.html');
         exit();
     } else {
-        // メール送信に失敗した場合のエラー処理などを追加することができます
-        echo 'メールの送信に失敗しました。';
+        // メール送信に失敗した場合のエラー処理
+        $lastError = error_get_last();
+        echo 'メールの送信に失敗しました。エラーメッセージ: ' . $lastError['message'];
     }
-  
-    // 他のフォームフィールドがあれば追加
-
-    }
-
-    // これで、これらの値をHTMLに必要な場所に挿入できます
-  ?>
+}
+?>
 
 <!-- ▲ Headerやその他コンテンツなど　※自由に編集可 ▲-->
 
@@ -111,6 +144,42 @@ if (empty($email) || empty($referrer) || empty($companyName)) {
     <tr><th>店舗1その他お申込プラン</th><td><?php echo htmlspecialchars($_POST['店舗1その他お申込プラン']); ?></td></tr>
     <tr><th>店舗1サービス利用開始希望時期</th><td><?php echo htmlspecialchars($_POST['店舗1サービス利用開始希望時期']); ?></td></tr>
     <tr><th>店舗1MEO対策ワード</th><td><?php echo htmlspecialchars($_POST['店舗1MEO対策ワード']); ?></td></tr>
+    <tr><th>店舗2屋号</th><td><?php echo htmlspecialchars($_POST['店舗2屋号']); ?></td></tr>
+    <tr><th>店舗2所在地（郵便番号）</th><td><?php echo htmlspecialchars($_POST['店舗2所在地（郵便番号）']); ?></td></tr>
+    <tr><th>店舗2所在地（住所、建物・号室）</th><td><?php echo htmlspecialchars($_POST['店舗2所在地（住所、建物・号室）']); ?></td></tr>
+    <tr><th>店舗2電話番号</th><td><?php echo htmlspecialchars($_POST['店舗2電話番号']); ?></td></tr>
+    <tr><th>店舗2ご担当者</th><td><?php echo htmlspecialchars($_POST['店舗2ご担当者']); ?></td></tr>
+    <tr><th>店舗2お申込プラン</th><td><?php echo htmlspecialchars($_POST['店舗2お申込プラン']); ?></td></tr>
+    <tr><th>店舗2その他お申込プラン</th><td><?php echo htmlspecialchars($_POST['店舗2その他お申込プラン']); ?></td></tr>
+    <tr><th>店舗2サービス利用開始希望時期</th><td><?php echo htmlspecialchars($_POST['店舗2サービス利用開始希望時期']); ?></td></tr>
+    <tr><th>店舗2MEO対策ワード</th><td><?php echo htmlspecialchars($_POST['店舗2MEO対策ワード']); ?></td></tr>
+    <tr><th>店舗3屋号</th><td><?php echo htmlspecialchars($_POST['店舗3屋号']); ?></td></tr>
+    <tr><th>店舗3所在地（郵便番号）</th><td><?php echo htmlspecialchars($_POST['店舗3所在地（郵便番号）']); ?></td></tr>
+    <tr><th>店舗3所在地（住所、建物・号室）</th><td><?php echo htmlspecialchars($_POST['店舗3所在地（住所、建物・号室）']); ?></td></tr>
+    <tr><th>店舗3電話番号</th><td><?php echo htmlspecialchars($_POST['店舗3電話番号']); ?></td></tr>
+    <tr><th>店舗3ご担当者</th><td><?php echo htmlspecialchars($_POST['店舗3ご担当者']); ?></td></tr>
+    <tr><th>店舗3お申込プラン</th><td><?php echo htmlspecialchars($_POST['店舗3お申込プラン']); ?></td></tr>
+    <tr><th>店舗3その他お申込プラン</th><td><?php echo htmlspecialchars($_POST['店舗3その他お申込プラン']); ?></td></tr>
+    <tr><th>店舗3サービス利用開始希望時期</th><td><?php echo htmlspecialchars($_POST['店舗3サービス利用開始希望時期']); ?></td></tr>
+    <tr><th>店舗3MEO対策ワード</th><td><?php echo htmlspecialchars($_POST['店舗3MEO対策ワード']); ?></td></tr>
+    <tr><th>店舗4屋号</th><td><?php echo htmlspecialchars($_POST['店舗4屋号']); ?></td></tr>
+    <tr><th>店舗4所在地（郵便番号）</th><td><?php echo htmlspecialchars($_POST['店舗4所在地（郵便番号）']); ?></td></tr>
+    <tr><th>店舗4所在地（住所、建物・号室）</th><td><?php echo htmlspecialchars($_POST['店舗4所在地（住所、建物・号室）']); ?></td></tr>
+    <tr><th>店舗4電話番号</th><td><?php echo htmlspecialchars($_POST['店舗4電話番号']); ?></td></tr>
+    <tr><th>店舗4ご担当者</th><td><?php echo htmlspecialchars($_POST['店舗4ご担当者']); ?></td></tr>
+    <tr><th>店舗4お申込プラン</th><td><?php echo htmlspecialchars($_POST['店舗4お申込プラン']); ?></td></tr>
+    <tr><th>店舗4その他お申込プラン</th><td><?php echo htmlspecialchars($_POST['店舗4その他お申込プラン']); ?></td></tr>
+    <tr><th>店舗4サービス利用開始希望時期</th><td><?php echo htmlspecialchars($_POST['店舗4サービス利用開始希望時期']); ?></td></tr>
+    <tr><th>店舗4MEO対策ワード</th><td><?php echo htmlspecialchars($_POST['店舗4MEO対策ワード']); ?></td></tr>
+    <tr><th>店舗5屋号</th><td><?php echo htmlspecialchars($_POST['店舗5屋号']); ?></td></tr>
+    <tr><th>店舗5所在地（郵便番号）</th><td><?php echo htmlspecialchars($_POST['店舗5所在地（郵便番号）']); ?></td></tr>
+    <tr><th>店舗5所在地（住所、建物・号室）</th><td><?php echo htmlspecialchars($_POST['店舗5所在地（住所、建物・号室）']); ?></td></tr>
+    <tr><th>店舗5電話番号</th><td><?php echo htmlspecialchars($_POST['店舗5電話番号']); ?></td></tr>
+    <tr><th>店舗5ご担当者</th><td><?php echo htmlspecialchars($_POST['店舗5ご担当者']); ?></td></tr>
+    <tr><th>店舗5お申込プラン</th><td><?php echo htmlspecialchars($_POST['店舗5お申込プラン']); ?></td></tr>
+    <tr><th>店舗5その他お申込プラン</th><td><?php echo htmlspecialchars($_POST['店舗5その他お申込プラン']); ?></td></tr>
+    <tr><th>店舗5サービス利用開始希望時期</th><td><?php echo htmlspecialchars($_POST['店舗5サービス利用開始希望時期']); ?></td></tr>
+    <tr><th>店舗5MEO対策ワード</th><td><?php echo htmlspecialchars($_POST['店舗5MEO対策ワード']); ?></td></tr>
     
 <!-- 他のフォームフィールドがあれば追加 -->
 </tbody></table>
